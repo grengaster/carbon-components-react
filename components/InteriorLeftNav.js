@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-/* global window */
-
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import window from 'window-or-global';
+
 import InteriorLeftNavList from './InteriorLeftNavList';
 import InteriorLeftNavItem from './InteriorLeftNavItem';
 import Icon from './Icon';
@@ -20,12 +20,8 @@ class InteriorLeftNav extends Component {
   };
 
   state = {
-    activeHref: this.props.activeHref || '#',
+    activeHref: this.props.activeHref || (window.location && window.location.pathname),
     open: true,
-  };
-
-  componentDidMount = () => {
-    this.setState({ activeHref: window.location.pathname });
   };
 
   componentWillReceiveProps = nextProps => {

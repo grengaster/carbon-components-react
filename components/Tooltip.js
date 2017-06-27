@@ -1,4 +1,5 @@
-import React, { PropTypes, Component } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Icon from './Icon';
 import classNames from 'classnames';
 import FloatingMenu from '../internal/FloatingMenu';
@@ -62,7 +63,7 @@ class Tooltip extends Component {
       className
     );
 
-    const menuOffset = { left: 4, top: 10 };
+    const menuOffset = { left: 5, top: 10 };
 
     return (
       <div>
